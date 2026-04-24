@@ -8,7 +8,7 @@ require('dotenv').config();
     const page = await context.newPage();
 
     const fileContent = fs.readFileSync(process.env.ISSUE_ID_CSV_PATH, 'utf-8');
-    const tickets = fileContent.split(process.env.CSV_EOF_CHAR);
+    const tickets = fileContent.split("\n");
 
     await page.goto(`${process.env.EASYPROJECT_BASE_URL}/login`);
 
@@ -16,8 +16,8 @@ require('dotenv').config();
 
     await page.waitForURL("**/my/page", { timeout: 0 });
 
-    tickets.map((ticket) => {
-        const id = ticket.trim();
+    for (let i = 0; i < tickets.length; i++) {
+        const id = tickets[i].trim();
 
         console.log(`Downloading ticket ${id}`);
         await page.goto(`${process.env.EASYPROJECT_BASE_URL}/issues/${id}`, { waitUntil: 'networkidle' });
@@ -36,7 +36,7 @@ require('dotenv').config();
         });
 
         console.log(`Saved Ticket-${id}.pdf`);
-    });
+    }
 
     await browser.close();
 })();   
