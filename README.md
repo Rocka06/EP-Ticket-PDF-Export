@@ -26,6 +26,8 @@ Automated tool to download EasyProject tickets/issues as PDF files in batch. Thi
    npm install
    ```
 
+This will download the `playwright/test` and `dotenv` NPM packages, and run `npx playwright install` 
+
 ## Configuration
 
 1. Create the environment file:
