@@ -1,0 +1,19 @@
+{
+  "name": "ep_ticket_pdf_export",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "tickets": "node TicketDownloader.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.5.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.0"
+  }
+}
