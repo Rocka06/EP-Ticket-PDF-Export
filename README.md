@@ -5,7 +5,7 @@ Automated tool to download EasyProject tickets/issues as PDF files in batch. Thi
 ## Features
 
 - **Batch Download**: Process multiple tickets at once from a CSV file
-- **Opens Comments Autmatically**: Before exporting, it presses the "Show All" button on the bottom, so every comment is exported
+- **Opens Comments Automatically**: Before exporting, it presses the "Show All" button on the bottom, so every comment is exported
 
 ## Prerequisites
 
