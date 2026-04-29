@@ -87,3 +87,10 @@ Saved Ticket-1234.pdf
 Downloading ticket 1235
 Saved Ticket-1235.pdf
 ```
+
+## How to uninstall
+
+To remove the downloaded playwright browsers from your pc, just run:
+```bash
+npm run clean
+```

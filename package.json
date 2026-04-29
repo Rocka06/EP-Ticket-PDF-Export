@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "tickets": "node TicketDownloader.js",
-    "postinstall": "playwright install"
+    "postinstall": "playwright install",
+    "clean": "playwright uninstall"
   },
   "keywords": [],
   "author": "",
