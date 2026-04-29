@@ -20,10 +20,10 @@ require('dotenv').config();
         const id = tickets[i].trim();
 
         console.log(`Downloading ticket ${id}`);
-        await page.goto(`${process.env.EASYPROJECT_BASE_URL}/issues/${id}`, { waitUntil: 'networkidle' });
+        await page.goto(`${process.env.EASYPROJECT_BASE_URL}/issues/${id}`, { waitUntil: 'domcontentloaded' });
 
         const button = page.locator('#load-more-easy-journal-history');
-        if (await button.count() !== 0) {
+        while (await button.count() > 0 && await button.isEnabled() && await button.isVisible()) {
             await button.click();
             await page.waitForLoadState('networkidle');
         }
